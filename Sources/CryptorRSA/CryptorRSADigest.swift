@@ -141,7 +141,7 @@ extension Data {
 			}
 
 			// HMAC type, symmetric encryption, padding type
-			public var alogrithmForEncryption: (OpaquePointer?, OpaquePointer?, Int32) {
+			public var algorithmForEncryption: (OpaquePointer?, OpaquePointer?, Int32) {
 		
 				switch self {
 		
@@ -219,12 +219,12 @@ extension Data {
 			}
 				
 			@available(macOS 10.12, iOS 10.0, watchOS 3.3, tvOS 12.0, *)
-			public var alogrithmForEncryption: SecKeyAlgorithm {
+			public var algorithmForEncryption: SecKeyAlgorithm {
 			
 				switch self {
 				
 				case .sha1:
-					return .rsaEncryptionOAEPSHA1AESGCM
+					return .rsaEncryptionOAEPSHA1
 				
 				case .sha224:
 					return .rsaEncryptionOAEPSHA224AESGCM

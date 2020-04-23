@@ -232,7 +232,7 @@ public class CryptorRSA {
 			#else
 				
 				var response: Unmanaged<CFError>? = nil
-				let eData = SecKeyCreateEncryptedData(key.reference, algorithm.alogrithmForEncryption, self.data as CFData, &response)
+				let eData = SecKeyCreateEncryptedData(key.reference, algorithm.algorithmForEncryption, self.data as CFData, &response)
 				if response != nil {
 				
 					guard let error = response?.takeRetainedValue() else {
@@ -284,7 +284,7 @@ public class CryptorRSA {
 			#else
 				
 				var response: Unmanaged<CFError>? = nil
-				let pData = SecKeyCreateDecryptedData(key.reference, algorithm.alogrithmForEncryption, self.data as CFData, &response)
+				let pData = SecKeyCreateDecryptedData(key.reference, algorithm.algorithmForEncryption, self.data as CFData, &response)
 				if response != nil {
 				
 					guard let error = response?.takeRetainedValue() else {
